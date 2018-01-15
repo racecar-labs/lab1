@@ -102,7 +102,7 @@ class ParticleFilter():
   # Reinitialize your particles and weights according to the received initial pose
   # Remember to apply a reasonable amount of Gaussian noise to each particle's pose
   def clicked_pose_cb(self, msg):
-    self.state_lock.acquire(blocking=True)
+    self.state_lock.acquire()
     
     # YOUR CODE HERE
     
@@ -115,7 +115,11 @@ class ParticleFilter():
   # (4) Publishes a subsample of the particles (use self.MAX_VIZ_PARTICLES). 
   #     Sample so that particles with higher weights are more likely to be sampled.
   def visualize(self):
+    self.state_lock.acquire()
+    
     # YOUR CODE HERE
+    
+    self.state_lock.release()
   
 # Suggested main 
 if __name__ == '__main__':

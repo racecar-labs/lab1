@@ -1,4 +1,4 @@
-import ropsy
+import rospy
 import numpy as np
 
 class ReSampler:
@@ -14,14 +14,14 @@ class ReSampler:
       self.state_lock = state_lock
   
   def resample_naiive(self):
-    self.state_lock.acquire(blocking=True)
+    self.state_lock.acquire()
     # Use np.random.choice to re-sample 
     # YOUR CODE HERE
     
     self.state_lock.release()
   
   def resample_low_variance(self):
-    self.state_lock.acquire(blocking=True)
+    self.state_lock.acquire()
     # Implement low variance re-sampling
     # YOUR CODE HERE
     
