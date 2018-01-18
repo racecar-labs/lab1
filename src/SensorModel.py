@@ -66,6 +66,7 @@ class SensorModel:
     sensor_model_table = np.zeros((table_width,table_width))
 
     # Populate sensor model table as specified
+    # Note that the row corresponds to the observed measurement and the column corresponds to the expected measurement
     # YOUR CODE HERE  
     return sensor_model_table
 
