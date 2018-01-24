@@ -62,6 +62,7 @@ class KinematicMotionModel:
     self.state_lock.acquire()
     
     if self.last_servo_cmd is None:
+      self.state_lock.release()
       return
 
     if self.last_vesc_stamp is None:
